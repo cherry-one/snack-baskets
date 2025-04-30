@@ -1,0 +1,180 @@
+.container {
+    display: grid;
+    grid-column: auto;
+    margin: 0;
+    background-color: white;
+    color: black;
+    width: 960px;
+    font-size: 15px;
+    border:black solid 1px;
+    align-items: center;
+    position: relative;
+    justify-items: center;
+    font-family: 'Arial', sans-serif;
+    
+}
+
+/* Top Bar 색상과 컨텐츠960px 맞추기기 */
+.T_bar {
+    width: 100%;
+    background-color: rgb(157, 216, 255);
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    border: brgb(255, 188, 157)lack solid 1px;
+    border-bottom: rgb(255, 188, 157) solid 2px;
+}
+
+/* 링크 시 색상변화 없 */
+a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+a:hover{
+    color: black;
+    font-weight: bold;
+}
+button{
+    color: white;
+    font-weight: bold;
+}
+button:hover{
+    color: black;
+    font-weight: bold;
+}
+
+/* 사용자 우측 */
+.user-info{
+    position: absolute;
+    right: 1em;
+}
+
+
+/* 뒤로가기 버튼  */
+.back-button {
+    position: absolute;
+    top: 3em;
+    left: 1.2em;
+    font-size: 1.5em;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+ /* 검색창  */
+.search-box {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1em;
+    width: 69%;
+}
+/* 위 박스랑 크기 연동됨ㄷㄷ 왠지는 몰?루 하다보니 됨 (아직 공부 필요! */
+.search-box input {
+    width: 69%;
+    padding: 0.5em;
+    border: 1px solid #aaa;
+    border-radius: 15px;
+}
+/* 버튼 창 안으로 이동인데 ? 개 노가다다 */
+.search-box button {
+    position: absolute;
+    left: 71.5%;
+    padding-top: 5.5px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+/* 부식 메뉴 박스 */
+.product-chat-box {
+    width: 90%;
+    margin: auto;
+}
+
+.product-chat-box h2 {
+    text-align: left;
+    padding-left: 0.5em;
+}
+
+ 테이블 
+.table-wrapper {
+    border: 1px solid #ccc;
+    margin-top: 0.5em;
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border: solid black 1px;
+}
+
+th {
+    background-color: rgb(255, 188, 157);
+    color: white;
+    padding: 0.5em;
+    font-weight: normal;
+    border: solid black 1px;
+}
+
+td {
+    padding: 0.5em;
+    border-top: 1px solid #ddd;
+    text-align: center;
+    border: solid black 1px;
+}
+
+input[type="checkbox"] {
+    transform: scale(1.2);
+    margin-right: 0.5em;
+}
+
+
+.chat-input {
+    display: flex;
+    justify-content: center;
+    margin-top: 1em;
+}
+
+.chat-input input {
+    width: 70%;
+    padding: 0.5em;
+    border: 1px solid rgb(255, 188, 157);
+    border-radius: 4px 0 0 4px;
+}
+
+.chat-input button {
+    padding: 0.5em 1em;
+    border: 1px solid rgb(255, 188, 157);
+    background-color: rgb(255, 188, 157);
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+}
+
+
+.info-bar {
+    background-color: rgb(255, 188, 157);
+    color: white;
+    text-align: center;
+    padding: 0.5em;
+    margin-top: 2em;
+}
+
+
+.register {
+    text-align: center;
+    margin: 1em;
+    margin-bottom: 10px;
+}
+
+.register button {
+    background-color: rgb(255, 188, 157);
+    color: white;
+    padding: 0.6em 1.5em;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+} 
