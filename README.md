@@ -15,7 +15,7 @@ user-icon i
 
 
 info-bar p
-    background-color: rgb(253, 232, 222);
+    background-color: rgb(222, 233, 253);
     margin: 0;
     padding: 10px;
 
@@ -23,6 +23,28 @@ info-bar p
 bar 
     background-color: #e0e0e0;
 
-.fill.color1 { background-color: #7da9fa; }
+.fill.color1 { background-color: #b77dfa; }
 .fill.color2 { background-color: #ffc18f; }
 .fill.color3 { background-color: #a9dfbf; }
+
+
+th {
+    background-color: rgb(157, 188, 255);
+    color: #ffffff;
+}
+
+th, td {
+    padding: 8px;
+    border: 1px solid rgb(157, 188, 255);
+    text-align: center; 
+    font-size: 14px;
+    white-space: nowrap; 
+}
+
+td {
+    position: relative;
+    background-color: rgb(246, 249, 255);
+}
+
+hover : rgb(0, 81, 255);
+color: rgb(157, 188, 255);
