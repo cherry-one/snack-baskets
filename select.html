@@ -6,12 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Select snack list</title>
     <link rel="stylesheet" href="select.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
     <script>
         window.addEventListener('DOMContentLoaded', function () {
             const tbody = document.getElementById('table-body');
             const desiredRowCount = 10; // 총 보여주고 싶은 행 수
             const currentRowCount = tbody.querySelectorAll('tr').length;
             const rowsToAdd = desiredRowCount - currentRowCount;
+            const moreElements = document.querySelectorAll('.more');
 
             for (let i = 0; i < rowsToAdd; i++) {
                 const tr = document.createElement('tr');
@@ -19,35 +22,64 @@
                 const td2 = document.createElement('td');
                 td1.innerHTML = '&nbsp;';
                 td2.innerHTML = '&nbsp;';
+
+                const link = document.createElement('a');
+                link.href = "#";
+                link.className = "link-chevron";
+
+                const icon = document.createElement('i');
+                icon.className = "fa-solid fa-chevron-right";
+
+                link.appendChild(icon);
+                td2.appendChild(link);
+
                 tr.appendChild(td1);
                 tr.appendChild(td2);
                 tbody.appendChild(tr);
             }
-        });
+
+            moreElements.forEach((moreEl, index) => {
+                const link = document.createElement('a');
+                link.href = 'selectlist.html'; // 원하는 링크 주소
+                link.className = 'link-chevron';
+
+                const icon = document.createElement('i');
+                icon.className = 'fa-solid fa-chevron-right';
+
+                link.appendChild(icon);
+
+                // ✅ .more 요소 바로 뒤에 삽입
+                moreEl.after(link);
+            });
+        })
+
     </script>
 </head>
 
 <body>
     <table>
-        <table>
-            <thead>
-                <tr>
-                    <th>주차</th>
-                    <th>신청 부식 list</th>
-                </tr>
-            </thead>
-            <tbody id="table-body">
-                <tr>
-                    <td>04-28 ~ 05-02</td>
-                    <td>몬스터, 핫식스, 육개장, ... <span class="more">+3</span></td>
-                </tr>
-                <tr>
-                    <td>04-21 ~ 04-25</td>
-                    <td><span class="more">+1</span></td>
-                </tr>
-                <!-- JavaScript가 여기서 빈 행을 추가 -->
-            </tbody>
-        </table>
+        <thead>
+            <tr>
+                <th>주차</th>
+                <th>신청 부식 list</th>
+            </tr>
+        </thead>
+        <tbody id="table-body">
+            <tr>
+                <td>04-28 ~ 05-02</td>
+                <td>몬스터, 핫식스, 육개장, ... <span class="more">+3</span></td>
+            </tr>
+            <tr>
+                <td>04-21 ~ 04-25</td>
+                <td><span class="more">+1</span></td>
+            </tr>
+            <tr>
+                <td>04-21 ~ 04-25</td>
+                <td><span class="more">+1</span></td>
+            </tr>
+            <!-- JavaScript가 여기서 빈 행을 추가 -->
+        </tbody>
+    </table>
 
     </table>
 </body>

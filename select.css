@@ -25,6 +25,27 @@ th, td {
     white-space: nowrap; 
 }
 
+td {
+    position: relative;
+}
+
+.link-chevron {
+    position: absolute;
+    right: 30px;
+    top: 30%;
+    text-decoration: none;
+    color: #ff6600;
+}
+
+.link-chevron i {
+    font-size: 14px;
+    vertical-align: middle;
+}
+
+.link-chevron:hover {
+    color: #000;
+}
+
 .more {
     color: #888;
     font-size: 12px;
