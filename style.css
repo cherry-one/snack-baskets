@@ -1,21 +1,56 @@
 /* 공통 요소 */
-body {
-    font-family: 'Arial', sans-serif;
+html, body {
     margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
     background-color: #ffffff;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-x: hidden;
+    width: 100vw;
+    height: 100%;
 }
 
-header {
+header, footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
     background-color: rgb(255, 188, 157);
     color: #ffffff;
     padding: 10px;
+    width: 100%;
     height: 30px;
     font-weight: bold;
 }
-
+#notmain_header {
+    background-color: rgb(255, 188, 157);
+    width: 100%;
+    height: 30px;
+    max-width: 100vw;
+}
+#notmain_header > div{
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    width: 960px;
+    margin: 0 auto;
+}
+a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: #fff;
+}
+#logo{
+    z-index: 99;
+    position: absolute;
+    left: 50%;
+    top: 25px;
+    transform: translate(-50%, -50%);
+}
 .user-tools {
     display: flex;
     align-items: center;
@@ -195,4 +230,137 @@ button {
     width: 30px;
     height: 30px;
     object-fit:contain;
+}
+
+#manage_main {
+    display: flex;
+    width: 960px;
+    height: calc(100% - 100px);
+    border: #333 1px solid;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+#usrtext{
+    margin-right: 10px;
+}
+
+.box1 {
+    width: 960px;
+    display: flex;
+    padding: 10px 0;
+}
+.box1 > * {
+    border: #333 1px solid;
+    height: 300px;
+    
+}
+
+#con1 {
+    width: 620px;
+    margin-left: 10px;
+    margin-right: 20px;
+}
+
+#con2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 300px;
+}
+#con2 > * {
+    background-color: rgb(255, 188, 157);
+    height: 30px;
+    border-radius: 8px;
+}
+/* 부식목록 */
+.box2{
+    display: flex;
+    width: 940px;
+    margin-left: 10px;
+    flex-direction: column;
+    background-color: #7da9fa;
+    height: calc(100% - 310px);
+    box-sizing: border-box;
+    position: relative;
+}
+.box2 > div {
+    display: flex;
+    width: 940px;
+    height: 20px;
+    justify-content: space-between;
+    padding: 0 10px;
+    box-sizing: border-box;
+    background-color: #ffc18f;
+    line-height: 24px;
+}
+.box2 > div > * {
+    background-color: aqua
+}
+.box2 > table {
+    border-collapse: collapse;
+    width: 940px;
+    margin-top: 10px;
+}
+.listno{
+    width: 30px;
+    text-align: center;
+}
+.listitem{
+    width: 200px;
+    text-align: center;
+}
+.listprice{
+    width: 60px;
+    text-align: right;
+}
+#listpriceid{
+    text-align: center;
+}
+.countcell, input[type=number]{
+    width: 30px;
+    text-align: center;
+}
+.checkcell{
+    width: 30px;
+    text-align: center;
+}
+#managerlist *{
+    border: #333 1px solid;
+}
+#manage_sum {
+    position: absolute;
+    display: flex;
+    justify-content: flex-start;
+    bottom: 0;
+    height: 40px;
+    line-height: 40px;
+    font-size: x-large;
+}
+#mana_sum{
+    background-color: #fff;
+    font-size: x-large;
+    height: 100%;
+    width: 300px;
+    margin-left: 10px;
+}
+.modal{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 0, 0, 0.6);
+    border-radius: 8px;
+    width: 780px;
+    height: 400px;
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+/* 화이트리스트 팝업 */
+.mohead {
+    width: 100%;
+    height: 30px;
+    background-color: #fff;
 }

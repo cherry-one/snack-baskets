@@ -5,26 +5,67 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
 </head>
 <body>
-    <header>
-        <button id="backbtn"><img src="./images/backarrow.png"></button>
-        <p id="logo">GSITM 부트캠프 10기 부식 신청</p>
-        <div class="user-tools">
-            <a href="" class="user-icon"><i class="fa-solid fa-circle-user"></i></a>
+    <header  id="notmain_header">
+        <a href="#" id="logo">GSITM 부트캠프 10기 부식 신청</a>
+        <div>
+            <button id="backbtn"><img src="./images/backarrow.png"></button>
+            <div class="user-tools">
+                <a href="" class="user-icon"><span id="usrtext">관리자 ○○○</span><i class="fa-solid fa-circle-user"></i></a>
+            </div>
         </div>
     </header>
-    <main>
+    <main id="manage_main">
         <div class="box1">
-            <div id="con1"></div>
-            <div id="con2"></div>
+            <div id="con1">
+                차트
+            </div>
+            <div id="con2">
+                <button id="setperson">화이트 리스트 관리</button>
+                <button id="seturl">가격 정보 관리</button>
+                <button id="setvote">투표 기간 설정</button>
+                <button id="setmoney">금액 설정</button>
+            </div>
         </div>
         <div class="box2">
-            <p>선정된 부식 목록</p>
+            <div>
+                선정된 부식 목록 <button id="print">프린터</button>
+            </div>
+            <table id="managerlist">
+                <tr style="background-color: #333; color: #fff;">
+                    <td class="listno">순위</td>
+                    <td class="listitem">품목</td>
+                    <td class="listprice" id="listpriceid">가격</td>
+                    <td class="countcell">수량 선택</td>
+                    <td class="checkcell">확인</td>
+                </tr>
+                <tr>
+                    <td class="listno"></td>
+                    <td class="listitem"></td>
+                    <td class="listprice"></td>
+                    <td class="countcell"><input type="number" name="수량"class="buyCount" min="1" max10="" value="1"></td>
+                    <td class="checkcell"><input type="checkbox" name="체크" class="buyCheck"></td>
+                </tr>
+            </table>
+            <div id="manage_sum">
+                합계 :<span id="mana_sum"></span>
+            </div>
         </div>
     </main>
     <footer>
-
+        ff
     </footer>
+    <div class="modal" id="pop_wl">
+        <div class="mohead"></div>
+        <div id="quick"></div>
+        <div class="modaltext"></div>
+        <div id="authlist"></div>
+    </div>
+    <!-- <div id="pop_si" class="modal"></div>
+    <div id="pop_vo" class="modal"></div>
+    <div id="pop_pr" class="modal"></div> -->
 </body>
 </html> 
