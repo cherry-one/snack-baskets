@@ -13,13 +13,13 @@ table {
 }
 
 th {
-    background-color: rgb(255, 188, 157);
+    background-color: rgb(157, 188, 255);
     color: #ffffff;
 }
 
 th, td {
     padding: 8px;
-    border: 1px solid rgb(255, 188, 157);
+    border: 1px solid rgb(157, 188, 255);
     text-align: center; 
     font-size: 14px;
     white-space: nowrap; 
@@ -34,7 +34,7 @@ td {
     right: 30px;
     top: 30%;
     text-decoration: none;
-    color: #ff6600;
+    color: rgb(222, 233, 253);
 }
 
 .link-chevron i {

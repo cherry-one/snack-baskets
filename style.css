@@ -8,7 +8,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: rgb(255, 188, 157);
+    background-color: rgb(157, 188, 255);
     color: #ffffff;
     padding: 10px;
 }
@@ -38,7 +38,7 @@ header {
 }
 
 .info-bar p {
-    background-color: rgb(253, 232, 222);
+    background-color: rgb(222, 233, 253);
     margin: 0;
     padding: 10px;
 }
@@ -98,7 +98,7 @@ header {
     font-size: medium;
 }
 
-.fill.color1 { background-color: #7da9fa; }
+.fill.color1 { background-color: #b77dfa; }
 .fill.color2 { background-color: #ffc18f; }
 .fill.color3 { background-color: #a9dfbf; }
 
@@ -108,7 +108,7 @@ header {
     width: 150px;
     height: 150px;
     border-radius: 50%;
-    background-image: conic-gradient(#7da9fa 0% 65%, #ffc18f 65% 90%, #a9dfbf 90% 100%);
+    background-image: conic-gradient(#b77dfa 0% 65%, #ffc18f 65% 90%, #a9dfbf 90% 100%);
     margin: 0 auto 10px;
 }
 
@@ -132,7 +132,7 @@ header {
     display: inline-block;
 }
 
-.pie-box.color1 { background-color: #7da9fa; }
+.pie-box.color1 { background-color: #b77dfa; }
 .pie-box.color2 { background-color: #ffc18f; }
 .pie-box.color3 { background-color: #a9dfbf; }
 
@@ -165,7 +165,7 @@ header {
     height: 20%;
     font-size: 16px;
     border: none;
-    background-color: rgb(255, 188, 157);
+    background-color: rgb(157, 188, 255);
     color: white;
     border-radius: 5px;
     cursor: pointer;
@@ -178,6 +178,6 @@ header {
 .select-frame {
     width: 100%;
     height: 100%;
-    border: 2px solid rgb(255, 188, 157);
+    border: 2px solid rgb(157, 188, 255);
     border-radius: 5px;
 }
