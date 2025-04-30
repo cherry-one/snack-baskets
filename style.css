@@ -1,3 +1,4 @@
+/* 공통 요소 */
 body {
     font-family: 'Arial', sans-serif;
     margin: 0;
@@ -12,6 +13,7 @@ header {
     color: #ffffff;
     padding: 10px;
     height: 30px;
+    font-weight: bold;
 }
 
 .user-tools {
@@ -42,6 +44,12 @@ header {
     background-color: rgb(253, 232, 222);
     margin: 0;
     padding: 10px;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+    background-color: rgba(255, 255, 255, 0);
 }
 
 /* 메인 레이아웃 (좌우 배치) */
@@ -181,4 +189,10 @@ header {
     height: 100%;
     border: 2px solid rgb(255, 188, 157);
     border-radius: 5px;
+}
+/* 관리자 페이지 */
+#backbtn img{
+    width: 30px;
+    height: 30px;
+    object-fit:contain;
 }
