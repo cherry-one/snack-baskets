@@ -1,0 +1,293 @@
+body {
+    font-family: 'Malgun Gothic', Arial, sans-serif;
+    background: #fff;
+    margin: 40px;
+}
+
+h1 {
+    text-align: center;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+th,
+td {
+    border: 1px solid #888;
+    padding: 8px;
+    text-align: center;
+}
+
+th {
+    background: #b5ae83;
+    color: #222;
+}
+
+.rank {
+    width: 40px;
+}
+
+.product {
+    width: 300px;
+}
+
+.vote-bar-bg {
+    background: #e0e0e0;
+    width: 200px;
+    height: 18px;
+    border-radius: 6px;
+    position: relative;
+    display: inline-block;
+    margin-right: 8px;
+}
+
+.vote-bar {
+    background: #9ab8d4;
+    height: 100%;
+    border-radius: 6px;
+}
+
+.vote-comments {
+    text-align: left;
+    color: #555;
+    font-size: 0.95em;
+}
+
+.total {
+    background: #635c36;
+    color: #fff;
+    font-weight: bold;
+    padding: 10px;
+    font-size: 1.1em;
+}
+
+.chat-box {
+    border: 1px solid #bbb;
+    padding: 16px;
+    background: #faf9f3;
+    margin-bottom: 16px;
+}
+
+.chat-entry {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: flex-start;
+}
+
+.chat-bubble {
+    background: #f4f4f4;
+    border-radius: 10px;
+    padding: 8px 14px;
+    margin-left: 8px;
+    min-width: 80px;
+}
+
+.chat-x {
+    color: #c00;
+    font-weight: bold;
+    margin-right: 6px;
+    font-size: 1.2em;
+}
+
+.chat-right {
+    justify-content: flex-end;
+}
+
+.chat-bubble-right {
+    background: #e1e7ef;
+    margin-left: 0;
+    margin-right: 8px;
+}
+
+.input-row {
+    margin-bottom: 10px;
+}
+
+.input-row input {
+    margin-right: 8px;
+    padding: 4px 8px;
+}
+
+.message-input {
+    width: 70%;
+    padding: 6px;
+}
+
+.send-btn {
+    padding: 6px 18px;
+    background: #444;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.send-btn:hover {
+    background: #222;
+}
+
+.menu-title {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.back-arrow {
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+body {
+    font-family: 'Malgun Gothic', Arial, sans-serif;
+    background: #fff;
+    margin: 40px;
+}
+
+h1 {
+    text-align: center;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+th,
+td {
+    border: 1px solid #888;
+    padding: 8px;
+    text-align: center;
+}
+
+th {
+    background: #b5ae83;
+    color: #222;
+}
+
+.rank {
+    width: 40px;
+}
+
+.product {
+    width: 300px;
+}
+
+.vote-bar-bg {
+    background: #e0e0e0;
+    width: 200px;
+    height: 18px;
+    border-radius: 6px;
+    position: relative;
+    display: inline-block;
+    margin-right: 8px;
+}
+
+.vote-bar {
+    background: #9ab8d4;
+    height: 100%;
+    border-radius: 6px;
+}
+
+.vote-comments {
+    text-align: left;
+    color: #555;
+    font-size: 0.95em;
+}
+
+.total {
+    background: #635c36;
+    color: #fff;
+    font-weight: bold;
+    padding: 10px;
+    font-size: 1.1em;
+}
+
+.chat-box {
+    border: 1px solid #bbb;
+    padding: 16px;
+    background: #faf9f3;
+    margin-bottom: 16px;
+}
+
+.chat-entry {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: flex-start;
+}
+
+.chat-bubble {
+    background: #f4f4f4;
+    border-radius: 10px;
+    padding: 8px 14px;
+    margin-left: 8px;
+    min-width: 80px;
+}
+
+.chat-x {
+    color: #c00;
+    font-weight: bold;
+    margin-right: 6px;
+    font-size: 1.2em;
+}
+
+.chat-right {
+    justify-content: flex-end;
+}
+
+.chat-bubble-right {
+    background: #e1e7ef;
+    margin-left: 0;
+    margin-right: 8px;
+}
+
+.input-row {
+    margin-bottom: 10px;
+}
+
+.input-row input {
+    margin-right: 8px;
+    padding: 4px 8px;
+}
+
+.message-input {
+    width: 70%;
+    padding: 6px;
+}
+
+.send-btn {
+    padding: 6px 18px;
+    background: #444;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.send-btn:hover {
+    background: #222;
+}
+
+.menu-title {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.back-arrow {
+    font-size: 1.5em;
+    cursor: pointer;
+}
+.scroller {
+    height: 300px;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+    border: radious 10px;
+  }
+  .scroller section {
+    scroll-snap-align: start;
+  }
+  
