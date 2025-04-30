@@ -8,6 +8,10 @@ h1 {
     text-align: center;
 }
 
+h2{
+    text-align: center;
+}
+
 table {
     width: 100%;
     border-collapse: collapse;
@@ -22,7 +26,7 @@ td {
 }
 
 th {
-    background: #b5ae83;
+    background: #dfc208;
     color: #222;
 }
 
@@ -57,7 +61,7 @@ th {
 }
 
 .total {
-    background: #635c36;
+    background: #403663;
     color: #fff;
     font-weight: bold;
     padding: 10px;
@@ -164,7 +168,7 @@ td {
 }
 
 th {
-    background: #b5ae83;
+    background: rgb(255, 188, 157);
     color: #222;
 }
 
@@ -174,6 +178,7 @@ th {
 
 .product {
     width: 300px;
+    
 }
 
 .vote-bar-bg {
@@ -199,7 +204,7 @@ th {
 }
 
 .total {
-    background: #635c36;
+    background: rgb(255, 188, 157);
     color: #fff;
     font-weight: bold;
     padding: 10px;
@@ -228,7 +233,7 @@ th {
 }
 
 .chat-x {
-    color: #c00;
+    color: rgb(209, 16, 16);
     font-weight: bold;
     margin-right: 6px;
     font-size: 1.2em;
@@ -281,6 +286,7 @@ th {
     font-size: 1.5em;
     cursor: pointer;
 }
+/* 여기서 부터  추가함함 */
 .scroller {
     height: 300px;
     overflow-y: scroll;
@@ -290,4 +296,34 @@ th {
   .scroller section {
     scroll-snap-align: start;
   }
+ /* header */
+ .header-row {
+    display: flex;
+    align-items: center;
+    background-color: rgb(255, 188, 157);
+    border: 1px solid rgb(255, 188, 157);
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 16px;
+  }
   
+  .header-row h2 {
+    flex: 1;
+    margin: 0;
+    font-size: 2em;
+    font-weight: bold;
+    text-align: center;
+    /* 배경색과 테두리는 부모에 이미 있으므로 생략 가능 */
+    background: none;
+    border: none;
+  }
+  
+  .header-user {
+    font-size: 1.1em;
+    font-weight: bold;
+    margin-left: 16px;
+    color: #222;
+    /* 필요하다면 배경색 추가 */
+    /* background-color: rgb(255, 188, 157); */
+  }
+ 
