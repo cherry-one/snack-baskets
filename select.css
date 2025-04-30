@@ -1,0 +1,31 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+    overflow: auto; /* 스크롤 가능 */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed; /* 셀 너비 균등 */
+}
+
+th {
+    background-color: rgb(255, 188, 157);
+    color: #ffffff;
+}
+
+th, td {
+    padding: 8px;
+    border: 1px solid rgb(255, 188, 157);
+    text-align: center; /* 가운데 정렬 */
+    font-size: 14px;
+    white-space: nowrap; /* 줄바꿈 방지 */
+}
+
+.more {
+    color: #888;
+    font-size: 12px;
+}
