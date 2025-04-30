@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GSITM 부트캠프 부식 신청</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+</head>
+<body>
+    <header>
+        <h2 style="margin: 0px;">GSITM 부트캠프 10기 부식 신청</h2>
+        <div class="user-tools">
+            <a href="" class="user-icon"><i class="fa-solid fa-circle-user"></i></a>
+            <a href="" class="login"><img src="/스낵바구니/images/kakaotalk.png" alt="카카오 로그인" /></a>
+        </div>
+    </header>
+
+    <div class="info-bar">
+        <p>부식 등록 기간: 00.00 ~ 00.00 / 투표 기간: 00.00 ~ 00.00</p>
+    </div>
+
+    <div class="main-content">
+        <div class="graph">
+            <h3>실시간 투표 그래프</h3>
+            <div class="bar-graph">
+                <div class="bar-label">예감</div>
+                <div class="bar">
+                    <div class="fill color1" style="width: 60%"><span>60%</span></div>
+                </div>
+                <div class="bar-label">포카칩</div>
+                <div class="bar">
+                    <div class="fill color2" style="width: 30%"><span>30%</span></div>
+                </div>
+                <div class="bar-label">햇반</div>
+                <div class="bar">
+                    <div class="fill color3" style="width: 50%"><span>50%</span></div>
+                </div>
+            </div>
+
+            <h3>카테고리별 비율</h3>
+            <div class="pie"></div>
+
+            <div class="legend">
+                <div class="legend-item"><span class="pie-box color1"></span><span class="label-text">스낵류</span></div>
+                <div class="legend-item"><span class="pie-box color2"></span><span class="label-text">음료류</span></div>
+                <div class="legend-item"><span class="pie-box color3"></span><span class="label-text">그 외</span></div>
+            </div>
+        </div>
+
+        <!-- 우측 패널 -->
+        <div class="side-panel">
+            <section class="panel">
+                <button class="register-btn">부식 등록</button>
+                <button class="vote-btn">투표하기</button>
+            </section>
+
+            <!-- 리스트 iframe 삽입 -->
+            <section class="select-panel">
+                <iframe src="select.html" title="부식선정리스트" class="select-frame"></iframe>
+            </section>
+        </div>
+    </div>
+</body>
+</html>
