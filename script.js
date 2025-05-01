@@ -1,6 +1,6 @@
 const fileInput = document.getElementById('fileInput');
 const uploadBtn = document.getElementById('uploadBtn');
-const modal = document.getElementById('myModal'); //모달달
+const modal = document.getElementById('myModal'); //모달
 const closeBtn = document.querySelector('.exit_modal');
 const openBtn = document.getElementById('openModalBtn');
 const ctx = document.getElementById('myBarChart').getContext('2d');//그래프 샘플
