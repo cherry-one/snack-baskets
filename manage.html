@@ -6,13 +6,13 @@
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
-
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
     <header  id="notmain_header">
         <a href="#" id="logo">GSITM 부트캠프 10기 부식 신청</a>
         <div>
-            <button id="backbtn"><img src="./images/backarrow.png"></button>
+            <button id="backbtn"><img src="./images/arrow.png"></button>
             <div class="user-tools">
                 <a href="" class="user-icon"><span id="usrtext">관리자 ○○○</span><i class="fa-solid fa-circle-user"></i></a>
             </div>
@@ -21,7 +21,7 @@
     <main id="manage_main">
         <div class="box1">
             <div id="con1">
-                차트
+                <canvas id="myBarChart" width="620" height="300"></canvas>
             </div>
             <div id="con2">
                 <button id="setperson">화이트 리스트 관리</button>
@@ -32,40 +32,339 @@
         </div>
         <div class="box2">
             <div>
-                선정된 부식 목록 <button id="print">프린터</button>
+                선정된 부식 목록 <button id="print"><img src="./images/print.png" alt="출력버튼"></button>
             </div>
-            <table id="managerlist">
-                <tr style="background-color: #333; color: #fff;">
-                    <td class="listno">순위</td>
-                    <td class="listitem">품목</td>
-                    <td class="listprice" id="listpriceid">가격</td>
-                    <td class="countcell">수량 선택</td>
-                    <td class="checkcell">확인</td>
-                </tr>
-                <tr>
-                    <td class="listno"></td>
-                    <td class="listitem"></td>
-                    <td class="listprice"></td>
-                    <td class="countcell"><input type="number" name="수량"class="buyCount" min="1" max10="" value="1"></td>
-                    <td class="checkcell"><input type="checkbox" name="체크" class="buyCheck"></td>
-                </tr>
-            </table>
+            <div id="tablebox">
+                <table id="managerlist">
+                    <tr style="background-color: #333; color: #fff;">
+                        <td class="listno">순위</td>
+                        <td class="listitem">품목</td>
+                        <td class="listprice" id="listpriceid">가격</td>
+                        <td class="countcell">수량 선택</td>
+                        <td class="checkcell">확인</td>
+                    </tr>
+                    <!-- 부식리스트 -->
+                    <tr>
+                        <td class="listno"></td>
+                        <td class="listitem"></td>
+                        <td class="listprice"></td>
+                        <td class="countcell"><input type="number" name="수량"class="buyCount" min="1" max10="" value="1"></td>
+                        <td class="checkcell"><input type="checkbox" name="체크" class="buyCheck"></td>
+                    </tr>
+                    <tr>
+                        <td class="listno"></td>
+                        <td class="listitem"></td>
+                        <td class="listprice"></td>
+                        <td class="countcell"><input type="number" name="수량"class="buyCount" min="1" max10="" value="1"></td>
+                        <td class="checkcell"><input type="checkbox" name="체크" class="buyCheck"></td>
+                    </tr>
+                    <tr>
+                        <td class="listno"></td>
+                        <td class="listitem"></td>
+                        <td class="listprice"></td>
+                        <td class="countcell"><input type="number" name="수량"class="buyCount" min="1" max10="" value="1"></td>
+                        <td class="checkcell"><input type="checkbox" name="체크" class="buyCheck"></td>
+                    </tr>
+                    <tr>
+                        <td class="listno"></td>
+                        <td class="listitem"></td>
+                        <td class="listprice"></td>
+                        <td class="countcell"><input type="number" name="수량"class="buyCount" min="1" max10="" value="1"></td>
+                        <td class="checkcell"><input type="checkbox" name="체크" class="buyCheck"></td>
+                    </tr>
+                    <tr>
+                        <td class="listno"></td>
+                        <td class="listitem"></td>
+                        <td class="listprice"></td>
+                        <td class="countcell"><input type="number" name="수량"class="buyCount" min="1" max10="" value="1"></td>
+                        <td class="checkcell"><input type="checkbox" name="체크" class="buyCheck"></td>
+                    </tr>
+                    <tr>
+                        <td class="listno"></td>
+                        <td class="listitem"></td>
+                        <td class="listprice"></td>
+                        <td class="countcell"><input type="number" name="수량"class="buyCount" min="1" max10="" value="1"></td>
+                        <td class="checkcell"><input type="checkbox" name="체크" class="buyCheck"></td>
+                    </tr>
+                    <tr>
+                        <td class="listno"></td>
+                        <td class="listitem"></td>
+                        <td class="listprice"></td>
+                        <td class="countcell"><input type="number" name="수량"class="buyCount" min="1" max10="" value="1"></td>
+                        <td class="checkcell"><input type="checkbox" name="체크" class="buyCheck"></td>
+                    </tr>
+                    <tr>
+                        <td class="listno"></td>
+                        <td class="listitem"></td>
+                        <td class="listprice"></td>
+                        <td class="countcell"><input type="number" name="수량"class="buyCount" min="1" max10="" value="1"></td>
+                        <td class="checkcell"><input type="checkbox" name="체크" class="buyCheck"></td>
+                    </tr>
+                    <tr>
+                        <td class="listno"></td>
+                        <td class="listitem"></td>
+                        <td class="listprice"></td>
+                        <td class="countcell"><input type="number" name="수량"class="buyCount" min="1" max10="" value="1"></td>
+                        <td class="checkcell"><input type="checkbox" name="체크" class="buyCheck"></td>
+                    </tr>
+                    <tr>
+                        <td class="listno"></td>
+                        <td class="listitem"></td>
+                        <td class="listprice"></td>
+                        <td class="countcell"><input type="number" name="수량"class="buyCount" min="1" max10="" value="1"></td>
+                        <td class="checkcell"><input type="checkbox" name="체크" class="buyCheck"></td>
+                    </tr>
+                    <tr>
+                        <td class="listno"></td>
+                        <td class="listitem"></td>
+                        <td class="listprice"></td>
+                        <td class="countcell"><input type="number" name="수량"class="buyCount" min="1" max10="" value="1"></td>
+                        <td class="checkcell"><input type="checkbox" name="체크" class="buyCheck"></td>
+                    </tr>
+                </table>
+            </div>
             <div id="manage_sum">
-                합계 :<span id="mana_sum"></span>
+                합계 :<span id="mana_sum">123123</span>
             </div>
         </div>
     </main>
-    <footer>
-        ff
-    </footer>
+    <footer></footer>
+    <!-- 화이트 리스트 팝업 -->
     <div class="modal" id="pop_wl">
-        <div class="mohead"></div>
-        <div id="quick"></div>
-        <div class="modaltext"></div>
-        <div id="authlist"></div>
+        <div class="mohead">
+            <div class="searchset">
+                <input type="search" class="searchbox" placeholder="검색할 이름을 입력하세요." >
+                <button id="searchtool"><img src="./images/searchtool.png" alt="검색"></button>
+            </div>
+            <button class="exit_modal">X</button>
+        </div>
+        <form id="quick">
+            <input id="quick_name" placeholder="이름을 입력하세요." required>
+            <input type="email" id="quick_email" placeholder="이메일 주소를 입력하세요." required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="올바른 이메일 주소를 입력하세요">
+            <button type="submit" id="quick_submit">등록</button>
+            <button id="quick_delete">삭제</button>
+        </form>
+        <div class="modaltext">
+            인증된 회원 목록
+            <input type="file" id="fileInput" style="display: none;">
+            <button id="uploadBtn"><img src="./images/upload.png" alt="업로드" title="회원 관리 양식 업로드 manP.xlsx"></button>
+            <a href="#" download="#"><button id="dnloadBtn"><img src="./images/upload.png" alt="다운로드" title="회원 관리 양식 다운로드 manP.xlsx"></button></a>
+        </div>
+        <div id="authlist">
+            <table>
+                <tr>
+                    <td>이름</td>
+                    <td>이메일</td>
+                </tr>
+                <tr>
+                    <td class="wl_name"></td>
+                    <td class="wl_email"></td>
+                </tr>
+                <tr>
+                    <td class="wl_name"></td>
+                    <td class="wl_email"></td>
+                </tr>
+                <tr>
+                    <td class="wl_name"></td>
+                    <td class="wl_email"></td>
+                </tr>
+                <tr>
+                    <td class="wl_name"></td>
+                    <td class="wl_email"></td>
+                </tr>
+                <tr>
+                    <td class="wl_name"></td>
+                    <td class="wl_email"></td>
+                </tr>
+                <tr>
+                    <td class="wl_name"></td>
+                    <td class="wl_email"></td>
+                </tr>
+                <tr>
+                    <td class="wl_name"></td>
+                    <td class="wl_email"></td>
+                </tr>
+                <tr>
+                    <td class="wl_name"></td>
+                    <td class="wl_email"></td>
+                </tr>
+                <tr>
+                    <td class="wl_name"></td>
+                    <td class="wl_email"></td>
+                </tr>
+                <tr>
+                    <td class="wl_name"></td>
+                    <td class="wl_email"></td>
+                </tr>
+                <tr>
+                    <td class="wl_name"></td>
+                    <td class="wl_email"></td>
+                </tr>
+                <tr>
+                    <td class="wl_name"></td>
+                    <td class="wl_email"></td>
+                </tr>
+                <tr>
+                    <td class="wl_name"></td>
+                    <td class="wl_email"></td>
+                </tr>
+                <tr>
+                    <td class="wl_name"></td>
+                    <td class="wl_email"></td>
+                </tr>
+            </table>
+        </div>
     </div>
-    <!-- <div id="pop_si" class="modal"></div>
-    <div id="pop_vo" class="modal"></div>
-    <div id="pop_pr" class="modal"></div> -->
+    <!-- 가격 정보 관리 팝업 -->
+    <div id="pop_si" class="modal">
+        <div class="mohead"  id="site_search">
+            <form class="searchset">
+                <input type="search" class="searchbox" placeholder="가격 검색에 사용할 사이트 URL을 입력하세요." pattern="https?:\/\/[^\s$.?#].[^\s]*" title="http 또는 https로 시작하는 올바른 URL을 입력하세요" >
+                <button id="site_submit">등록</button>
+            </form>
+            <button class="exit_modal">X</button>
+        </div>
+        <div class="modaltext">
+            등록한 사이트 목록
+        </div>
+        <div id="sitelist">
+            <table>
+                <tr>
+                    <td class="radiobtn"><input type="radio" name="selectedsite" value="1"></td>
+                    <td class="siteurl">example.com</td>
+                    <td><button class="delete_btn"><img src=./images/deletebtn.png alt=삭제버튼></button></td>
+                </tr>
+                <tr>
+                    <td class="radiobtn"><input type="radio" name="selectedsite" value="2"></td>
+                    <td class="siteurl">example.com</td>
+                    <td><button class="delete_btn"><img src=./images/deletebtn.png alt=삭제버튼></button></td>
+                </tr>
+                <tr>
+                    <td class="radiobtn"><input type="radio" name="selectedsite" value="3"></td>
+                    <td class="siteurl">example.com</td>
+                    <td><button class="delete_btn"><img src=./images/deletebtn.png alt=삭제버튼></button></td>
+                </tr>
+                <tr>
+                    <td class="radiobtn"><input type="radio" name="selectedsite" value="4"></td>
+                    <td class="siteurl">example.com</td>
+                    <td><button class="delete_btn"><img src=./images/deletebtn.png alt=삭제버튼></button></td>
+                </tr>
+                <tr>
+                    <td class="radiobtn"><input type="radio" name="selectedsite" value="5"></td>
+                    <td class="siteurl">example.com</td>
+                    <td><button class="delete_btn"><img src=./images/deletebtn.png alt=삭제버튼></button></td>
+                </tr>
+                <tr>
+                    <td class="radiobtn"><input type="radio" name="selectedsite" value="6"></td>
+                    <td class="siteurl">example.com</td>
+                    <td><button class="delete_btn"><img src=./images/deletebtn.png alt=삭제버튼></button></td>
+                </tr>
+                <tr>
+                    <td class="radiobtn"><input type="radio" name="selectedsite" value="7"></td>
+                    <td class="siteurl">example.com</td>
+                    <td><button class="delete_btn"><img src=./images/deletebtn.png alt=삭제버튼></button></td>
+                </tr>
+                <tr>
+                    <td class="radiobtn"><input type="radio" name="selectedsite" value="8"></td>
+                    <td class="siteurl">example.com</td>
+                    <td><button class="delete_btn"><img src=./images/deletebtn.png alt=삭제버튼></button></td>
+                </tr>
+                <tr>
+                    <td class="radiobtn"><input type="radio" name="selectedsite" value="9"></td>
+                    <td class="siteurl">example.com</td>
+                    <td><button class="delete_btn"><img src=./images/deletebtn.png alt=삭제버튼></button></td>
+                </tr>
+                <tr>
+                    <td class="radiobtn"><input type="radio" name="selectedsite" value="10"></td>
+                    <td class="siteurl">example.com</td>
+                    <td><button class="delete_btn"><img src=./images/deletebtn.png alt=삭제버튼></button></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <!-- 투표 기간 설정 팝업 -->
+    <div id="pop_vo" class="modal">
+        <section id="vohead" class="mohead">
+            <div id="itemdate">
+                <span>부식 등록 기간 설정</span>
+                <select id="mainopt1" class="optbox mainopt" data-sub="optbox2">
+                    <option value="">-- 선택 --</option>
+                    <option value="week">매주</option>
+                    <option value="month">매월</option>
+                </select>
+                <select id="subopt1" class="optbox2">
+                    <option value="">-- 선택 --</option>
+                </select>
+                <span class="subtext">부터</span>
+                <select class="optbox2">
+                    <option value="">-- 선택 --</option>
+                </select>
+                <span class="subtext">까지</span>
+            </div>
+            <div id="votedate">
+                <span>투표 기간 설정</span>
+                <select id="mainopt2" class="optbox mainopt2" data-sub="optbox3">
+                    <option value="">-- 선택 --</option>
+                    <option value="week">매주</option>
+                    <option value="month">매월</option>
+                </select>
+                <select id="subopt2" class="optbox3">
+                    <option value="">-- 선택 --</option>
+                </select>
+                <span class="subtext">부터</span>
+                <select class="optbox3">
+                    <option value="">-- 선택 --</option>
+                </select>
+                <span class="subtext">까지</span>
+            </div>
+            <button class="exit_modal">X</button>
+        </section>
+        <section>
+            <div><span>등록 마감일 알림</span><input type="radio" name="alram_item" value="on"><input type="radio" name="alram_item" value="off">
+                <input pattern="^(?:[1-9]|[1-5][0-9]|60)$" title="1부터 60 사이 숫자만 입력하세요" placeholder="숫자 입력">
+                <select class="limitopt" id="itemlimit">
+                    <option>-- 선택 --</option>
+                    <option>분 전</option>
+                    <option>시간 전</option>
+                    <option>일 전</option>
+                </select>
+            </div>
+            <div><span>투표표 마감일 알림</span><input class="selftype" type="radio" name="alram_vote" value="on"><input type="radio" name="alram_vote" value="off">
+                <input pattern="^(?:[1-9]|[1-5][0-9]|60)$" title="1부터 60 사이 숫자만 입력하세요" placeholder="숫자 입력">
+                <select class="limitopt" id="votelimit">
+                    <option>-- 선택 --</option>
+                    <option>분 전</option>
+                    <option>시간 전</option>
+                    <option>일 전</option>
+                </select>
+            </div>
+            <div><span>투표 마감 알림</span><input type="radio" name="alram_fin" value="on"><input type="radio" name="alram_fin" value="off">
+        </section>
+    </div>
+    <!-- 금액 설정 팝업업 -->
+    <div id="pop_pr" class="modal">
+        <section id="prhead" class="mohead">
+            <div id="moneylimit">
+                <span>구매 한도 지정</span><input class="selftype" placeholder="금액 한도를 입력하세요." pattern="^\d+$" title="숫자만 입력하세요.">
+            </div>
+            <div id="categoryopt">
+                <span>카테고리 분류</span><input type="radio" name="labeling" value="on"><input type="radio" name="labeling" value="off">
+                <select class="caopt1">
+                    <option>스낵</option>
+                    <option>음료</option>
+                    <option>그외</option>
+                </select>
+                <input class="selftype" placeholder="금액 입력">
+                <select class="caopt1">
+                    <option>스낵</option>
+                    <option>음료</option>
+                    <option>그외</option>
+                </select>
+                <input class="selftype" placeholder="금액 입력">
+            </div>
+            <button class="exit_modal">X</button>
+        </section>
+    </div>
+    <script src="script.js"></script>
 </body>
 </html> 

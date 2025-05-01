@@ -13,11 +13,12 @@ html, body {
     height: 100%;
 }
 
+
 header, footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: rgb(255, 188, 157);
+    background-color: rgb(157, 188, 255);
     color: #ffffff;
     padding: 10px;
     width: 100%;
@@ -25,7 +26,7 @@ header, footer {
     font-weight: bold;
 }
 #notmain_header {
-    background-color: rgb(255, 188, 157);
+    background-color: rgb(157, 188, 255);
     width: 100%;
     height: 30px;
     max-width: 100vw;
@@ -76,7 +77,7 @@ a{
 }
 
 .info-bar p {
-    background-color: rgb(253, 232, 222);
+    background-color: rgb(222, 233, 253);
     margin: 0;
     padding: 10px;
 }
@@ -86,6 +87,7 @@ button {
     border: none;
     background-color: rgba(255, 255, 255, 0);
 }
+
 
 /* 메인 레이아웃 (좌우 배치) */
 .main-content {
@@ -209,7 +211,7 @@ button {
     height: 20%;
     font-size: 16px;
     border: none;
-    background-color: rgb(255, 188, 157);
+    background-color: rgb(157, 188, 255);
     color: white;
     border-radius: 5px;
     cursor: pointer;
@@ -250,10 +252,9 @@ button {
     display: flex;
     padding: 10px 0;
 }
-.box1 > * {
+#con1 {
     border: #333 1px solid;
-    height: 300px;
-    
+    height: 300px;   
 }
 
 #con1 {
@@ -269,9 +270,14 @@ button {
     width: 300px;
 }
 #con2 > * {
-    background-color: rgb(255, 188, 157);
+    background-color: rgb(207, 207, 207);
     height: 30px;
     border-radius: 8px;
+    font-weight: bold;
+}
+#con2 > button:hover {
+    background-color: #cacaca;
+    scale: 0.99;
 }
 /* 부식목록 */
 .box2{
@@ -279,7 +285,6 @@ button {
     width: 940px;
     margin-left: 10px;
     flex-direction: column;
-    background-color: #7da9fa;
     height: calc(100% - 310px);
     box-sizing: border-box;
     position: relative;
@@ -287,20 +292,39 @@ button {
 .box2 > div {
     display: flex;
     width: 940px;
-    height: 20px;
+    height: 30px;
     justify-content: space-between;
     padding: 0 10px;
     box-sizing: border-box;
-    background-color: #ffc18f;
-    line-height: 24px;
+    background-color: rgb(207, 207, 207);
+    line-height: 30px;
 }
-.box2 > div > * {
-    background-color: aqua
+/* 프린터 버튼*/
+#print{
+    background-color: #c7c7c7;
+    border-radius: 4px;
 }
-.box2 > table {
+.box2 > div > button > img {
+    display: flex;
+    justify-content: center;
+    object-fit: contain;
+    width: 25px;
+}
+#print:hover {
+    background-color: #a7a7a7;
+    scale: 0.99;
+}
+#tablebox{
+    padding: 0;
+    width: 100%;
+    height: calc(100% - 80px);
+    background-color: #fff;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+.box2 > div > table {
     border-collapse: collapse;
     width: 940px;
-    margin-top: 10px;
 }
 .listno{
     width: 30px;
@@ -332,35 +356,267 @@ button {
     position: absolute;
     display: flex;
     justify-content: flex-start;
-    bottom: 0;
+    bottom: 10px;
     height: 40px;
     line-height: 40px;
     font-size: x-large;
 }
 #mana_sum{
-    background-color: #fff;
+    color: rgb(255, 255, 105);
+    font-weight: bold;
     font-size: x-large;
     height: 100%;
     width: 300px;
     margin-left: 10px;
 }
+/* 모달 공통 */
 .modal{
     position: absolute;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    background-color: rgba(255, 0, 0, 0.6);
+    background-color: rgba(197, 215, 255, 0.856);
     border-radius: 8px;
     width: 780px;
     height: 400px;
     z-index: 999;
-    display: flex;
+    display: none;
     flex-direction: column;
     padding: 20px;
+}
+.mohead{
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+#searchtool{
+    display: block;
+    width: 30px;
+    height: 30px;
+    border: none;
+}
+#searchtool > img{
+    height: 30px;
+}
+.searchset{
+    display: flex;
+    width: 40%;
+    padding: 0 10px;
+    border-radius: 4px;
+    background-color: #ffffff;
+    justify-content: center;
+}
+.exit_modal{
+    width: 30px;
+    height: 30px;
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 0;
 }
 /* 화이트리스트 팝업 */
 .mohead {
     width: 100%;
     height: 30px;
+}
+.searchbox{
+    display: block;
+    width: 500px;
+    height: 30px;
+    border: none;
+
+}
+#quick {
     background-color: #fff;
+    margin-top: 20px;
+    width: 100%;
+    height: 40px;
+    padding: 5px;
+    box-sizing: border-box;
+    display: flex;
+    border-radius: 4px;
+}
+#quick_name{
+    background-color: #f1f1f1;
+    width: 150px;
+    height: 30px;
+    border: none;
+    padding: 0 10px;
+    display: block;
+    border: 1px solid #333;
+    border-radius: 4px;
+}
+#quick_email{
+    background-color: #f1f1f1;
+    width: 400px;
+    height: 30px;
+    border: none;
+    padding: 0 10px;
+    display: block;
+    margin-left: 10px;
+    margin-right: 70px;
+    border: 1px solid #333;
+    border-radius: 4px;
+}
+#quick_submit, #quick_delete{
+    width: 50px;
+    height: 30px;
+    background-color: #f1f1f1;
+    margin-left: 5px;
+    border-radius: 4px;
+    border: 1px solid #333;
+}
+.modaltext{
+    display: flex;
+    margin-top: 10px;
+    height: 30px;
+    background-color: #333;
+    border-radius: 4px 4px 0 0;
+    padding: 5px;
+    box-sizing: border-box;
+    color: #fff;
+    font-size: 0.8em;
+    justify-content: space-between;
+    position: relative;
+}
+.modaltext > a {
+    display: block;
+}
+#uploadBtn {
+    position: absolute;
+    right: 40px;
+}
+#uploadBtn > img {
+    height: 20px;
+    width: 20px;
+}
+#dnloadBtn > img{
+    transform: rotate(180deg);
+    width: 20px;
+    height: 20px;
+}
+#authlist{
+    height: 270px;
+    width: 100%;
+    overflow-x: hidden;
+    overflow-y: scroll;
+
+}
+#authlist table{
+    border-collapse: collapse;
+    background-color: #fff;
+    border-radius: 0 0 4px 4px;
+    width: 100%;
+    height: 100%;
+}
+#authlist table tr td {
+    border: #cacaca 1px solid;
+    padding: 0px 10px;
+    height: 20px;
+    font-size: 0.9em;
+    color: #5e5e5e;
+}
+.wl_name{
+    width: 150px;
+}
+/* 가격 정보 관리 팝업 */
+#pop_si{
+    height: 300px;
+    box-sizing: border-box;
+}
+#site_search > form{
+    width: 100%;
+    justify-content: left;
+    background-color: rgba(255, 255, 255, 0);
+}
+#site_search > form > input {
+    background-color: #ffffff;
+    margin-right: 10px;
+    border-radius: 4px;
+    padding: 0 10px;
+}
+#site_submit {
+    border-radius: 4px;
+    padding: 0 10px;
+    background-color: #fff;
+}
+#sitelist{
+    height: 200px;
+    width: 100%;
+    background-color: #fff;
+    border-radius: 0 0 4px 4px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    box-sizing: border-box;
+}
+#sitelist table{
+    border-collapse: collapse;
+}
+#sitelist > table > tr > td{
+    background-color: #fff;
+}
+#sitelist > table tr:hover{
+    background-color: #cacaca;
+    cursor: pointer;
+}
+.siteurl{
+    width: 95%;
+}
+.delete_btn{
+    width: 5%;
+    display: block;
+}
+.delete_btn > img {
+    width: 15px;
+}
+/* 삭제시 애니메이션 */
+.slide_out {
+    transform: translateX(-100%);
+    opacity: 0;
+    transition: all 0.4s ease;
+}
+/* 투표팝업 */
+#pop_vo {
+    height: 200px;
+}
+#pop_vo > section {
+    height: 50%;
+}
+#pop_vo > section > div > span {
+    width: 150px;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+.subtext{
+    width: 50px !important;
+}
+#vohead{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+#vohead > div {
+    margin-bottom: 10px;
+}
+/* 금액 설정 팝업 */
+#pop_pr{
+    height: 80px;
+}
+#prhead{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.selftype{
+    width: 100px;
+    text-align: right;
+}
+#moneylimit {
+    width: 100%;
+    display: flex;
+    margin-bottom: 10px;
+}
+#prhead > div > span {
+    margin-right: 10px;
 }
