@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>관리자페이지</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+    .chart-container {
+        width: 100%;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+    .box{
+        width: 200px;
+        padding: 15px;
+        margin: 10;
+        height: 40px;
+        background-color: skyblue;
+        border: 2px solid ;
+        cursor: pointer;
+        text-align: center;
+        font-size: 10px;
+    }
+    .box:hover {
+        background-color: #e0e0e0;}
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.4);
+    }
+    .modal-content {
+    background-color: #fff;
+    margin: 10% auto;
+    padding: 20px;
+    border-radius: 10px;
+    width: 400px;
+    position: relative;
+    }
+    .close-btn {
+        position: absolute;
+        top: 10px;
+        right: 15px;
+        font-size: 20px;
+        font-weight: bold;
+        color: #888;
+        cursor: pointer;
+    }
+    .close-btn:hover {
+        color: #000;
+    }
+    .titleh3{
+        text-align: center;
+        font-size: 30px;
+    }
+    iframe{
+        width: 100%; height: 350px;}
+    </style>
+
+</head> 
+<body>
+    <header>
+    <div>
+        <!-- 가운데 정렬 및 css반영 / 관리자 이미지 위치 조정-->
+        <h1>GSITM 부트캠프 10기 부식 관리자페이지</h1>
+        <img src="" alt="유저이미지">
+    </div>
+    </header>
+    <div>
+        <!-- 구매추이 그래프 그래프 js를 사용할 듯 -->
+        <!-- 집계 완료된 투표 이번주/다음주 막대 그래프-->
+        <h2 class="titleh3">구매추이</h2>
+        <div class="chart-container">
+            <canvas id = "myLineChart"></canvas>
+        </div>
+        <script>
+            const ctx = document.getElementById('myLineChart').getContext('2d');
+            new Chart(ctx, {
+              type: 'line',  // 여기!
+            data: {
+                labels: ['사브레', '나!', '햇반', '육개장', '포카칩'],
+                datasets: [{
+                label: '최다득표',
+                data: [1, 1, 2, 3, 1],
+                borderColor: 'rgba(54, 162, 235, 1)',
+                backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                  tension: 0.4, // 곡선 정도 (0이면 직선)
+                fill: true
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                legend: {
+                    position: 'top'
+                },
+                title: {
+                    display: true,
+                    text: ' 최다 득표 부식 순위'
+                }
+                }
+            }
+            });
+        </script>
+        <div><h3 class="titleh3"
+            style="margin-top: 50px; margin-bottom: 50px;">회원관리</h3></div>
+        </div>
+
+        <div style="display: flex; justify-content: space-between;">
+            <div class="box" onclick="openModal(1)"><p>화이트리스트</p></div>
+            <div class="box" onclick="openModal(2)"><p>크롤링 사이트 URL 지정</p></div>
+            <div class="box" onclick="openModal(3)"><p>투표 기간 설정</p></div>
+            <div class="box" onclick="openModal(4)"><p>한도 설정</p></div>
+        </div>
+        
+        <!-- 모달 1: 화이트리스트 -->
+        <div id="modal1" class="modal">
+            <div class="modal-content">
+            <span class="close-btn" onclick="closeModal(1)">&times;</span>
+            <h3>화이트리스트 설정</h3>
+            <p>허용할 도메인 목록을 관리합니다.</p>
+            </div>
+        </div>
+        
+        <!-- 모달 2: 크롤링 사이트 URL -->
+        <div id="modal2" class="modal">
+            <div class="modal-content">
+            <span class="close-btn" onclick="closeModal(2)">&times;</span>
+            <h3>크롤링 사이트 지정</h3>
+            <p>URL을 입력해주세요:</p>
+            <input type="text" placeholder="https://example.com" style="width:100%;">
+            </div>
+        </div>
+        
+        <!-- 모달 3: 투표 기간 -->
+        <div id="modal3" class="modal">
+            <div class="modal-content">
+            <span class="close-btn" onclick="closeModal(3)">&times;</span>
+            <h3>투표 기간 설정</h3>
+            <p>투표 시작일과 종료일을 선택하세요.</p>
+            <input type="date"> ~ <input type="date">
+            </div>
+        </div>
+        
+        <!-- 모달 4: 한도 설정 -->
+        <div id="modal4" class="modal">
+            <div class="modal-content">
+            <span class="close-btn" onclick="closeModal(4)">&times;</span>
+            <h3>한도 설정</h3>
+            <p>사용 가능한 최대 예산을 입력하세요.</p>
+            <input type="number" min="0" max="9999" style="width:100%;">
+            </div>
+        </div>
+        <!-- 모달 스크립트트 -->
+    <script>
+        // 모달 열기
+        function openModal(modalId) {
+        document.getElementById("modal" + modalId).style.display = "block";
+        }
+
+        // 모달 닫기
+        function closeModal(modalId) {
+        document.getElementById("modal" + modalId).style.display = "none";
+        }
+
+        // 배경 클릭 시 닫기
+        window.onclick = function(e) {
+        for (let i = 1; i <= 4; i++) {
+            const modal = document.getElementById("modal" + i);
+            if (e.target === modal) {
+        closeModal(i);
+            }
+        }
+        }
+    </script>
+    <div>
+        <!-- 선정된 부식 목록 list -->
+        <!-- 아이템 목록에서 사용자가 선택할 수 있는 항목들을 표시.
+        사용자가 아이템을 선택하면 합계가 계산.
+        합계가 설정된 상한선 이하로 유지되도록 실시간으로 관리.
+        선택된 아이템은 목록의 상단에 고정되며, 그 외의 아이템은 하단에 표시.
+        구분선을 사용하여 상위/하위 품목을 명확하게 표시.
+        선택된 아이템들에 대해 하위 품목이 상위 품목에 종속되도록 처리.  -->
+        <div><h4 class="titleh3"
+            style="margin-top: 50px; margin-bottom: 50px;">선정된 부식 list</h4></div>
+        </div>
+        <div>
+            <iframe src="" frameborder="1"></iframe>
+
+        </div>
+
+        <div>
+            <img src="이미지주소.jpg" alt="홈으로" style="margin-top: 50px; margin-bottom: 50px;">
+        </div>
+
+        
+
+    </div>
+</body>
+</html>

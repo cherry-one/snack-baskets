@@ -1,0 +1,183 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    background-color: #ffffff;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(157, 188, 255);
+    color: #ffffff;
+    padding: 10px;
+}
+
+.user-tools {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.user-icon {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.user-icon i {
+    font-size: 34px;
+    color: #ffffff;
+}
+
+.login img {
+    height: 34px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.info-bar p {
+    background-color: rgb(222, 233, 253);
+    margin: 0;
+    padding: 10px;
+}
+
+/* 메인 레이아웃 (좌우 배치) */
+.main-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 40px;
+    padding: 20px;
+}
+
+/* 그래프 영역 */
+.graph {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    width: 400px;
+}
+
+.bar-graph {
+    margin-bottom: 30px;
+}
+
+.bar-label {
+    margin: 8px 0 4px;
+    font-weight: bold;
+}
+
+.bar {
+    background-color: #e0e0e0;
+    border-radius: 20px;
+    height: 20px;
+    width: 100%;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+.fill {
+    height: 100%;
+    border-radius: 20px;
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    color: #fff;
+    font-size: 12px;
+    font-weight: bold;
+    overflow: visible;
+}
+
+.fill span {
+    position: absolute;
+    left: 30px;
+    top: 10%;
+    font-size: medium;
+}
+
+.fill.color1 { background-color: #b77dfa; }
+.fill.color2 { background-color: #ffc18f; }
+.fill.color3 { background-color: #a9dfbf; }
+
+/* 파이 그래프 */
+.pie {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-image: conic-gradient(#b77dfa 0% 65%, #ffc18f 65% 90%, #a9dfbf 90% 100%);
+    margin: 0 auto 10px;
+}
+
+.legend {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.pie-box {
+    width: 16px;
+    height: 16px;
+    border-radius: 3px;
+    display: inline-block;
+}
+
+.pie-box.color1 { background-color: #b77dfa; }
+.pie-box.color2 { background-color: #ffc18f; }
+.pie-box.color3 { background-color: #a9dfbf; }
+
+.label-text {
+    color: #333;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/* 오른쪽 패널 */
+.side-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    flex: 1;
+}
+
+.panel {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    color: #ffffff;
+
+}
+
+.register-btn, .vote-btn {
+    width: 20%;
+    min-width: 100px;
+    max-width: 200px;
+    height: 20%;
+    font-size: 16px;
+    border: none;
+    background-color: rgb(157, 188, 255);
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 0 50px;
+}
+
+.select-panel {
+    height: 500px;
+}
+.select-frame {
+    width: 100%;
+    height: 100%;
+    border: 2px solid rgb(157, 188, 255);
+    border-radius: 5px;
+}
